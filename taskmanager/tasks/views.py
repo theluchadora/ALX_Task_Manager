@@ -14,20 +14,25 @@ from rest_framework import status
 
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
     serializer_class = UserSerializer
 
+    # only have to show the logged-in user's data can't see other users or their data
+    def get_queryset(self):
+        return User.objects.filter(id=self.request.user.id)
+
     def get_permissions(self):
-        if self.action == 'create':  # signup(when creating new acc)
+        if self.action == 'create':  # signup(when creating new acc/register)
             return [AllowAny()]
         return super().get_permissions()
 
 class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     permission_classes = [IsOwner]
-    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['status', 'priority', 'due_date']
+    search_fields = ['title', 'description']
     ordering_fields = ['due_date', 'priority']
+    ordering = ['due_date']
 
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user)

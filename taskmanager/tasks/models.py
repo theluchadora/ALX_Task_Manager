@@ -24,6 +24,11 @@ class Task(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Pending')
     completed_at = models.DateTimeField(null=True, blank=True)
 
+    # added this in taskviewset so no need it here (but it is possible here to)
+    # just for a note purpose i didn't remove it 
+    # class Meta:
+    #     ordering = ['due_date'] # making it by default sort by due date
+
     def save(self, *args, **kwargs):
         if self.status == 'Completed' and not self.completed_at:
             self.completed_at = timezone.now()
