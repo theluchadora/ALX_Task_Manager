@@ -152,7 +152,7 @@ Authorization: Bearer <your-token>
 
 ### Project Structure
 ```
-taskmanager/
+ALX_Task_manager/
 │
 ├── manage.py
 ├── requirements.txt
@@ -161,7 +161,7 @@ taskmanager/
 │   ├── urls.py
 │   ├── wsgi.py
 │   └── asgi.py
-└── api/
+└── tasks/
     ├── models.py
     ├── serializers.py
     ├── views.py
