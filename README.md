@@ -169,12 +169,15 @@ taskmanager/
     ├── urls.py
     └── tests.py
 ```
-
+### Deployment 
+Deploy on render.com 
+**Link(Available at):** https://django-render-taskmanager-app.onrender.com/
 
 ### Author
 **Name:** Tsion Feleke  
 **Project:** ALX Capstone – Task Manager API  
 **GitHub:** [github.com/theluchadora](https://github.com/theluchadora)  
+
 
 ---
 
