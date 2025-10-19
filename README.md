@@ -171,7 +171,7 @@ ALX_Task_manager/
 ```
 ### Deployment 
 Deploy on render.com 
-**Link(Available at):** https://django-render-taskmanager-app.onrender.com/
+**Link(Available at):** https://django-render-taskmanager-app.onrender.com/api/users/
 
 ### Author
 **Name:** Tsion Feleke  
